@@ -8,5 +8,6 @@
       "platform": "windows",
       "mode": "exe"
     }
-  }
+  },
+  "modules": []
 }

@@ -1,3 +1,4 @@
+import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:wooden_fish/settings/settings.dart';
@@ -29,5 +30,14 @@ class SettingsLogic extends GetxController {
   void updateAuto(bool value) {
     settings.auto = value;
     update();
+  }
+
+  void share(BuildContext context) {
+    FlutterClipboard.copy('https://haihaihai.vip').then((value) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+        content: Text("已复制下载链接，快去粘贴分享给好友吧！"),
+        duration: Duration(seconds: 5),
+      ));
+    });
   }
 }

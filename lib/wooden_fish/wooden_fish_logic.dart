@@ -22,7 +22,7 @@ class WoodenFishLogic extends GetxController {
     getTemporaryDirectory().then((tempDir) async {
       String tempPath = tempDir.path;
       for (int i = 0; i < 10; i++) {
-        var file = File("$tempPath/hit$i.mp3");
+        var file = File("$tempPath/hit_$i.mp3");
         if (!file.existsSync()) {
           ByteData data = await rootBundle.load(Assets.audioHit);
           List<int> bytes =
@@ -90,6 +90,7 @@ class WoodenFishLogic extends GetxController {
               fadeOutUp.removeAt(0);
             });
           },
+          duration: Duration(seconds: 2),
           child: Text(
             "${_settings.text}+1",
             style: const TextStyle(color: Colors.white, fontSize: 32),

@@ -1,3 +1,4 @@
+import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -66,11 +67,23 @@ class SettingsPage extends StatelessWidget {
           );
         }),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          logic.save();
-        },
-        child: const Icon(Icons.check),
+      floatingActionButton: Wrap(
+        direction: Axis.vertical,
+        spacing: 16,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+             logic.share(context);
+            },
+            child: const Icon(Icons.share),
+          ),
+          FloatingActionButton(
+            onPressed: () {
+              logic.save();
+            },
+            child: const Icon(Icons.check),
+          ),
+        ],
       ),
     );
   }
