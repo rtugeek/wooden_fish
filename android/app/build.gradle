@@ -58,6 +58,7 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+    namespace 'com.rtugeek.wooden_fish'
 }
 
 flutter {
