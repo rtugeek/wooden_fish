@@ -1,0 +1,12 @@
+{
+  "output": "dist/",
+  "publish": true,
+  "jobs": {
+    "windows-exe": {
+      "target": "exe",
+      "changelog": "",
+      "platform": "windows",
+      "mode": "exe"
+    }
+  }
+}
